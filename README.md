@@ -6,3 +6,5 @@ and etc.
 ## what I learnt
 
 ## libraries used
+
+- [pillow](https://python-pillow.org/) - required since image field is used in the product model.
