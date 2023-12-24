@@ -18,17 +18,17 @@ h6 {
 
 a {
   text-decoration: none;
-  color: #5993bb;
+  color: #282;
 }
 
 a:hover {
-  color: #77b6e2;
+  color: #0a0;
 }
 
 a.button,
 input[type='submit'] {
   color: #fff;
-  background: #5993bb;
+  background: #282;
   border-radius: 4px;
   padding: 10px 20px;
   font-size: 14px;
@@ -50,8 +50,8 @@ a.button.light {
 
 table {
   width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
+  border-spacing: 0 1em;
+  border-collapse: separate;
 }
 
 table th,
@@ -72,7 +72,7 @@ tbody tr.subtotal {
 
 thead th,
 tbody tr.total {
-  background: #5993bb;
+  background: #282;
   color: #fff;
   font-weight: bold;
 }
@@ -178,7 +178,7 @@ ul.errorlist {
 }
 
 #sidebar ul li.selected {
-  background: #5993bb;
+  background: #282;
   border-radius: 4px;
 }
 
@@ -240,11 +240,11 @@ ul.errorlist {
   background: #efefef;
   padding: 10px 20px;
   color: #333;
-  border-bottom: 4px solid #5993bb;
+  border-bottom: 4px solid #282;
 }
 
 .order-info h3 {
-  color: #5993bb;
+  color: #282;
 }
 
 .order-info ul li {
