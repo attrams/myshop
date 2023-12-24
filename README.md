@@ -5,6 +5,8 @@ and etc.
 
 ## what I learnt
 
+- using django sessions to store cart items.
+
 ## Project Screenshots
 
 All images are from [unsplash](https://unsplash.com/)
