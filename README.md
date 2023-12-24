@@ -6,12 +6,15 @@ and etc.
 ## what I learnt
 
 - using django sessions to store cart items.
+- creating custom context processors.
 
 ## Project Screenshots
 
 All images are from [unsplash](https://unsplash.com/)
 ![product list page](assets/img/product_list_page.png)
 ![product detail page](assets/img/product_detail_page.png)
+![empty cart](assets/img/empty_cart.png)
+![cart items](assets/img/cart_items.png)
 
 ## libraries used
 
