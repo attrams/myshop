@@ -36,8 +36,8 @@
                                 {% csrf_token %}
                             </form>
                         </td>
-                        <td class="num">GH₵{{ item.price }}</td>
-                        <td class="num">GH₵{{ item.total_price }}</td>
+                        <td>GH₵{{ item.price }}</td>
+                        <td>GH₵{{ item.total_price }}</td>
                     </tr>
                 {% endwith %}
             {% empty %}
@@ -50,7 +50,7 @@
             <tr class="total">
                 <td>Total</td>
                 <td colspan="4"></td>
-                <td class="num">GH₵{{ cart.get_total_price }}</td>
+                <td>GH₵{{ cart.get_total_price }}</td>
             </tr>
         </tbody>
     </table>
