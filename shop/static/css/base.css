@@ -89,6 +89,16 @@ tbody td.num {
   text-align: right;
 }
 
+tbody tr.empty td:nth-child(2) {
+  text-align: center;
+  font-size: 32px;
+  color: #666;
+}
+
+tbody tr.empty td:nth-child(odd) {
+  background: #fff;
+}
+
 td input[type='submit'] {
   font-size: 12px;
   padding: 4px 10px;

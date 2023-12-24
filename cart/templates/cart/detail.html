@@ -40,6 +40,12 @@
                         <td class="num">GH₵{{ item.total_price }}</td>
                     </tr>
                 {% endwith %}
+            {% empty %}
+                <tr class="empty">
+                    <td></td>
+                    <td colspan="4">Your shopping cart is empty🛒</td>
+                    <td></td>
+                </tr>
             {% endfor %}
             <tr class="total">
                 <td>Total</td>
