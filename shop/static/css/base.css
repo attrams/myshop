@@ -268,8 +268,10 @@ ul.errorlist {
   float: right;
 }
 
-.order-info span {
-  float: right;
+.order-info ul li div {
+  display: flex;
+  justify-content: space-between;
+  color: black;
 }
 
 .neg {
