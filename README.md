@@ -10,11 +10,14 @@ and etc.
 
 ## Project Screenshots
 
-All images are from [unsplash](https://unsplash.com/)
+All product images are from [unsplash](https://unsplash.com/)
+
 ![product list page](assets/img/product_list_page.png)
 ![product detail page](assets/img/product_detail_page.png)
 ![empty cart](assets/img/empty_cart.png)
 ![cart items](assets/img/cart_items.png)
+![order checkout](assets/img/order_checkout.png)
+![order completed](assets/img/order_completed.png)
 
 ## libraries used
 
