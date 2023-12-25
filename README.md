@@ -7,6 +7,7 @@ and etc.
 
 - using django sessions to store cart items.
 - creating custom context processors.
+- using [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) and [rabbitmq](https://www.rabbitmq.com/#getstarted) to create asynchronous task(sending email when order is completed).
 
 ## Project Screenshots
 
@@ -22,3 +23,9 @@ All product images are from [unsplash](https://unsplash.com/)
 ## libraries used
 
 - [pillow](https://python-pillow.org/) - required since image field is used in the product model.
+- [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) - for sending email asynchronously when order is created.
+
+## PS
+
+- [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) requires a message broker. You can check this part of
+  the [documentation](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html#choosing-a-broker) on how to install one.
