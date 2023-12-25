@@ -24,7 +24,8 @@ All product images are from [unsplash](https://unsplash.com/)
 
 - [pillow](https://python-pillow.org/) - required since image field is used in the product model.
 - [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) - for sending email asynchronously when order is created.
-- [flower]() - for monitoring asynchronous task instead of using rabbitmq management ui.
+- [flower](https://flower.readthedocs.io/en/latest/) - for monitoring asynchronous task instead of using rabbitmq management ui.
+- [stripe](https://github.com/stripe/stripe-python) - for accepting payment.
 
 ## PS
 
