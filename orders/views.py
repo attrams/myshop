@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
+from .tasks import order_created
 
 # Create your views here.
 
@@ -25,6 +26,8 @@ def order_create(request):
                 )
 
             cart.clear()
+
+            order_created.delay(order.id)
 
             return render(request=request, template_name='orders/order/created.html', context={'order': order})
 
