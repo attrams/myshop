@@ -26,6 +26,7 @@ All product images are from [unsplash](https://unsplash.com/)
 - [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) - for sending email asynchronously when order is created.
 - [flower](https://flower.readthedocs.io/en/latest/) - for monitoring asynchronous task instead of using rabbitmq management ui.
 - [stripe](https://github.com/stripe/stripe-python) - for accepting payment.
+- [python-dotenv](https://github.com/theskumar/python-dotenv) - for loading stripe configuration.
 
 ## PS
 
