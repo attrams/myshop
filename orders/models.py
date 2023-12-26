@@ -28,6 +28,21 @@ class Order(models.Model):
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
+    def get_stripe_url(self):
+        if not self.stripe_id:
+            # no payment associated
+            return ''
+
+        if '_test_' in settings.STRIPE_SECRET_KEY:
+            # stripe path for test payments
+            path = '/test/'
+
+        else:
+            # stripe path for real payments
+            path = '/'
+
+        return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(
@@ -48,18 +63,3 @@ class OrderItem(models.Model):
 
     def get_cost(self):
         return self.price * self.quantity
-
-    def get_stripe_url(self):
-        if not self.stripe_id:
-            # no payment associated
-            return ''
-
-        if '_test_' in settings.STRIPE_SECRET_KEY:
-            # stripe path for test payments
-            path = '/test/'
-
-        else:
-            # stripe path for real payments
-            path = '/'
-
-        return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
