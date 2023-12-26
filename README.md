@@ -36,13 +36,14 @@ All product images are from [unsplash](https://unsplash.com/)
 
 - [Celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) requires a [message broker](https://en.wikipedia.org/wiki/Message_broker). You can check this part of the [documentation](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html#choosing-a-broker) on how to install and run one.
 
-- Add `.env` file at the root of the project. The root of the project is the folder that contains files like `manage.py`, `.gitignore` and etc. In this `.env` file create three variables; `STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY` and `STRIPE_API_VERSION`. These are required by stripe for making payment. You can get the values for these variables by:
+- Add `.env` file at the root of the project. The root of the project is the folder that contains files like `manage.py`, `.gitignore` and etc. In this `.env` file create three variables; `STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_API_VERSION` and `STRIPE_WEBHOOK_SECRET`. These are required by stripe for making payment. You can get the values for these variables by:
 
   1.  Visiting [stripe](https://dashboard.stripe.com/login).
   2.  Creating an account for testing. This can be located at the left top corner.
   3.  Accessing the [developers](https://dashboard.stripe.com/test/developers) page.
   4.  You can find the api version on this page.
-  5.  Then checkout the [API keys](https://dashboard.stripe.com/test/apikeys) tab for api keys.
+  5.  Checkout the [API keys](https://dashboard.stripe.com/test/apikeys) tab for api keys.
+  6.  Visit [webhooks](https://dashboard.stripe.com/test/webhooks/create?endpoint_location=local) for the stripe webhook secret.
 
   After getting these values set each variable in the `.env` file. Your
   `.env` file should look like this:
@@ -50,6 +51,7 @@ All product images are from [unsplash](https://unsplash.com/)
   - `STRIPE_PUBLISHABLE_KEY`=`"your stripe publishable key"`
   - `STRIPE_SECRET_KEY`=`"your stripe secret key"`
   - `STRIPE_API_VERSION`=`"your api version"`
+  - `STRIPE_WEBHOOK_SECRET`=`"your webhook secret"`
 
 - You can check this page on stripe for [test cards](https://stripe.com/docs/testing).
 
