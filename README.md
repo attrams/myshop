@@ -30,6 +30,7 @@ All product images are from [unsplash](https://unsplash.com/)
 - [flower](https://flower.readthedocs.io/en/latest/) - for monitoring asynchronous task instead of using rabbitmq management ui.
 - [stripe](https://github.com/stripe/stripe-python) - for accepting payment.
 - [python-dotenv](https://github.com/theskumar/python-dotenv) - for loading stripe configuration.
+- [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) - for generating order invoice pdf.
 
 ## PS
 
