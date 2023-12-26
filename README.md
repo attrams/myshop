@@ -8,6 +8,7 @@ and etc.
 - using django sessions to store cart items.
 - creating custom context processors.
 - using [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) and [rabbitmq](https://www.rabbitmq.com/#getstarted) to create asynchronous task(sending email when order is completed).
+- payment using [stripe](https://stripe.com/).
 
 ## Project Screenshots
 
@@ -18,6 +19,7 @@ All product images are from [unsplash](https://unsplash.com/)
 ![empty cart](assets/img/empty_cart.png)
 ![cart items](assets/img/cart_items.png)
 ![order checkout](assets/img/order_checkout.png)
+![payment page stripe](assets/img/payment_page_stripe.png)
 ![order completed](assets/img/order_completed.png)
 
 ## libraries used
@@ -30,5 +32,25 @@ All product images are from [unsplash](https://unsplash.com/)
 
 ## PS
 
-- [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) requires a message broker. You can check this part of
-  the [documentation](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html#choosing-a-broker) on how to install one.
+- Run the `requirements.txt` file to install the packages. you can run this file using the command `pip install -r requirements.txt` if you are not using a [virtual environment](https://docs.python.org/3/library/venv.html) or `python -m pip install -r requirements.txt` if you are using one.
+
+- [Celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) requires a [message broker](https://en.wikipedia.org/wiki/Message_broker). You can check this part of the [documentation](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html#choosing-a-broker) on how to install and run one.
+
+- Add `.env` file at the root of the project. The root of the project is the folder that contains files like `manage.py`, `.gitignore` and etc. In this `.env` file create three variables; `STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY` and `STRIPE_API_VERSION`. These are required by stripe for making payment. You can get the values for these variables by:
+
+  1.  Visiting [stripe](https://dashboard.stripe.com/login).
+  2.  Creating an account for testing. This can be located at the left top corner.
+  3.  Accessing the [developers](https://dashboard.stripe.com/test/developers) page.
+  4.  You can find the api version on this page.
+  5.  Then checkout the [API keys](https://dashboard.stripe.com/test/apikeys) tab for api keys.
+
+  After getting these values set each variable in the `.env` file. Your
+  `.env` file should look like this:
+
+  - `STRIPE_PUBLISHABLE_KEY`=`"your stripe publishable key"`
+  - `STRIPE_SECRET_KEY`=`"your stripe secret key"`
+  - `STRIPE_API_VERSION`=`"your api version"`
+
+- You can check this page on stripe for [test cards](https://stripe.com/docs/testing).
+
+- With your message broker running, Run [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) with the command `celery -A myshop worker -l info` then you can run the django project. So in all three things must be running, your chosen message broker, [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) and the django project.
