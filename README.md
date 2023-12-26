@@ -22,6 +22,8 @@ All product images are from [unsplash](https://unsplash.com/)
 ![order checkout](assets/img/order_checkout.png)
 ![payment page stripe](assets/img/payment_page_stripe.png)
 ![order completed](assets/img/order_completed.png)
+![invoice pending](assets/img/invoice_pending.png)
+![invoice paid](assets/img/invoice_paid.png)
 
 ## libraries used
 
