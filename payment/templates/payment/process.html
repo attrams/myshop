@@ -37,7 +37,8 @@
         </tbody>
     </table>
     <form action="{% url "payment:process" %}" method="post">
-        <input type="submit" value="Pay now">
+        <input type="submit" name="submit_action" value="Pay with card">
+        <input type="submit" name="submit_action" value="Pay with momo">
         {% csrf_token %}
     </form>
 {% endblock content %}

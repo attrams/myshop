@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
+from django.http import HttpResponse
 import stripe
 from decimal import Decimal
 
@@ -17,36 +18,45 @@ def payment_process(request):
     order = get_object_or_404(klass=Order, id=order_id)
 
     if request.method == 'POST':
-        success_url = request.build_absolute_uri(reverse('payment:completed'))
-        cancel_url = request.build_absolute_uri(reverse('payment:canceled'))
+        if 'submit_action' in request.POST:
+            action = request.POST['submit_action']
 
-        # stripe checkout session data
-        session_data = {
-            'mode': 'payment',
-            'client_reference_id': order.id,
-            'success_url': success_url,
-            'cancel_url': cancel_url,
-            'line_items': []
-        }
+            if action.lower() == 'pay with card':
+                success_url = request.build_absolute_uri(
+                    reverse('payment:completed'))
+                cancel_url = request.build_absolute_uri(
+                    reverse('payment:canceled'))
 
-        # add order items to the stripe checkout session
-        for item in order.items.all():
-            session_data['line_items'].append({
-                'price_data': {
-                    'unit_amount': int(item.price * Decimal('100')),
-                    'currency': 'usd',
-                    'product_data': {
-                        'name': item.product.name,
-                    },
-                },
-                'quantity': item.quantity,
-            })
+                # stripe checkout session data
+                session_data = {
+                    'mode': 'payment',
+                    'client_reference_id': order.id,
+                    'success_url': success_url,
+                    'cancel_url': cancel_url,
+                    'line_items': []
+                }
 
-        # create Stripe checkout session
-        session = stripe.checkout.Session.create(**session_data)
+                # add order items to the stripe checkout session
+                for item in order.items.all():
+                    session_data['line_items'].append({
+                        'price_data': {
+                            'unit_amount': int(item.price * Decimal('100')),
+                            'currency': 'usd',
+                            'product_data': {
+                                'name': item.product.name,
+                            },
+                        },
+                        'quantity': item.quantity,
+                    })
 
-        # redirect to Stripe payment form
-        return redirect(to=session.url, code=303)
+                # create Stripe checkout session
+                session = stripe.checkout.Session.create(**session_data)
+
+                # redirect to Stripe payment form
+                return redirect(to=session.url, code=303)
+
+            elif action.lower() == 'pay with momo':
+                return HttpResponse('working on it')
 
     else:
         return render(request=request, template_name='payment/process.html', context=locals())

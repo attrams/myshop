@@ -33,6 +33,11 @@ input[type='submit'] {
   padding: 10px 20px;
   font-size: 14px;
   border: 0;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background: #0a0;
 }
 
 a.button.light {
