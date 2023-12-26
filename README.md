@@ -9,6 +9,7 @@ and etc.
 - creating custom context processors.
 - using [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) and [rabbitmq](https://www.rabbitmq.com/#getstarted) to create asynchronous task(sending email when order is completed).
 - payment using [stripe](https://stripe.com/).
+- exporting information(data) in models to a csv file using the admin site.
 
 ## Project Screenshots
 
