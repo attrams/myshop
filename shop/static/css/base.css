@@ -273,7 +273,7 @@ ul.errorlist {
   float: right;
 }
 
-.order-info ul li div {
+.left-align-price {
   display: flex;
   justify-content: space-between;
   color: black;
