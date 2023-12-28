@@ -37,6 +37,7 @@ All product images are from [unsplash](https://unsplash.com/)
 - [stripe](https://github.com/stripe/stripe-python) - for accepting payment.
 - [python-dotenv](https://github.com/theskumar/python-dotenv) - for loading stripe configuration.
 - [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) - for generating order invoice pdf.
+- [redis](https://github.com/redis/redis-py) - store products to recommend.
 
 ## PS
 
