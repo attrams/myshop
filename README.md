@@ -67,3 +67,5 @@ All product images are from [unsplash](https://unsplash.com/)
 - You can check this page on stripe for [test cards](https://stripe.com/docs/testing).
 
 - With your message broker running, Run [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) with the command `celery -A myshop worker -l info`. You also have to run the [stripe webhook](https://dashboard.stripe.com/test/webhooks/create?endpoint_location=local) for the stripe webhook to automatically update order status. This can be done using the command `stripe listen --forward-to [your webhook path]`. For this project, the stripe webhooks will be forwarded to `localhost:8000/payment/webhook/` that is `stripe listen --forward-to localhost:8000/payment/webhook/`. Then you can run the django project. So in all four things must be running, your chosen message broker, [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html), [stripe webhook](https://dashboard.stripe.com/test/webhooks/create?endpoint_location=local) and the django project.
+
+- [redis](https://redis.io/) is also required since it is used to store recommended products.
