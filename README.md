@@ -41,6 +41,8 @@ All product images are from [unsplash](https://unsplash.com/)
 
 - Run the `requirements.txt` file to install the packages. you can run this file using the command `pip install -r requirements.txt` if you are not using a [virtual environment](https://docs.python.org/3/library/venv.html) or `python -m pip install -r requirements.txt` if you are using one.
 
+- Remember to also run the migrations. This can be done using `python manage.py migrate`.
+
 - [Celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) requires a [message broker](https://en.wikipedia.org/wiki/Message_broker). You can check this part of the [documentation](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html#choosing-a-broker) on how to install and run one.
 
 - Add `.env` file at the root of the project. The root of the project is the folder that contains files like `manage.py`, `.gitignore` and etc. In this `.env` file create three variables; `STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_API_VERSION` and `STRIPE_WEBHOOK_SECRET`. These are required by stripe for making payment. You can get the values for these variables by:
