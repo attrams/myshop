@@ -19,9 +19,9 @@
             {% endfor %}
             {% if cart.coupon %}
                 <li>
-                    <div>
+                    <div class="left-align-price">
                         "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
-                        <span class="neg left-align-price">- GH₵{{ cart.get_discount|floatformat:2 }}</span>
+                        <span class="neg">- GH₵{{ cart.get_discount|floatformat:2 }}</span>
                     </div>
                 </li>
             {% endif %}
