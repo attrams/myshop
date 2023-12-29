@@ -10,6 +10,7 @@ and etc.
 - using [celery](https://docs.celeryq.dev/en/stable/getting-started/first-steps-with-celery.html) and [rabbitmq](https://www.rabbitmq.com/#getstarted) to create asynchronous task(sending email when order is completed).
 - payment using [stripe](https://stripe.com/).
 - exporting information(data) in models to a csv file using the admin site.
+- Internationalization and Localization of django project.
 
 ## Project Screenshots
 
@@ -38,6 +39,7 @@ All product images are from [unsplash](https://unsplash.com/)
 - [python-dotenv](https://github.com/theskumar/python-dotenv) - for loading stripe configuration.
 - [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) - for generating order invoice pdf.
 - [redis](https://github.com/redis/redis-py) - store products to recommend.
+- [django-rosetta](https://django-rosetta.readthedocs.io/) - interface for translations.
 
 ## PS
 
