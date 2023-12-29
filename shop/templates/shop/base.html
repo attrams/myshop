@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
         <meta name="keywords" content="ecommerce django project">
         <title>
             {% block title %}
-                My Shop
+                {% trans "My Shop" %}
             {% endblock title %}
         </title>
         <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon_io/apple-touch-icon.png" %}">
@@ -22,23 +23,29 @@
     </head>
     <body>
         <div id="header">
-            <a href="{% url "shop:product_list" %}" class="logo">My Shop</a>
+            <a href="{% url "shop:product_list" %}" class="logo">{% trans "My Shop" %}</a>
         </div>
         <div id="subheader">
             <div class="cart">
                 {% with total_items=cart|length %}
                     {% if total_items > 0 %}
-                        Your cart: <a href="{% url "cart:cart_detail" %}">{{ total_items }} item{{ total_items|pluralize }},
-                    GH₵{{ cart.get_total_price_after_discount|floatformat:2 }}</a>
-                {% elif not order %}
-                    Your cart is empty.
-                {% endif %}
-            {% endwith %}
+                        {% trans "Your cart" %}:
+                        <a href="{% url "cart:cart_detail" %}">
+                            {% blocktrans with total=cart.get_total_price count item=total_items %}
+                                {{ items }} item, GH₵{{total}}
+                            {%plural%}
+                                {{items}} items, GH₵{{total}}
+                            {% endblocktrans %}
+                        </a>
+                    {% elif not order %}
+                        {% trans "Your cart is empty." %}
+                    {% endif %}
+                {% endwith %}
+            </div>
         </div>
-    </div>
-    <div id="content">
-        {% block content %}
-        {% endblock content %}
-    </div>
-</body>
+        <div id="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
 </html>
