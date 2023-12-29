@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-29 08:16+0000\n"
+"POT-Creation-Date: 2023-12-29 09:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,12 +97,28 @@ msgstr ""
 msgid "Coupon"
 msgstr ""
 
-#: myshop/settings.py:124
+#: myshop/settings.py:127
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:125
+#: myshop/settings.py:128
 msgid "Spanish"
+msgstr ""
+
+#: myshop/urls.py:29
+msgid "cart/"
+msgstr ""
+
+#: myshop/urls.py:30
+msgid "orders/"
+msgstr ""
+
+#: myshop/urls.py:31
+msgid "payment/"
+msgstr ""
+
+#: myshop/urls.py:32
+msgid "coupons/"
 msgstr ""
 
 #: payment/templates/payment/canceled.html:5
@@ -151,6 +167,18 @@ msgstr ""
 
 #: payment/templates/payment/process.html:62
 msgid "Pay with momo"
+msgstr ""
+
+#: payment/urls.py:9
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "completed/"
+msgstr ""
+
+#: payment/urls.py:11
+msgid "canceled/"
 msgstr ""
 
 #: shop/templates/shop/base.html:13 shop/templates/shop/base.html:26

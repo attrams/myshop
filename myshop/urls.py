@@ -18,16 +18,30 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+from django.utils.translation import gettext_lazy as _
+
+from payment import webhooks
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path(route='admin/', view=admin.site.urls),
-    path(route='cart/', view=include('cart.urls', namespace='cart')),
-    path(route='orders/', view=include('orders.urls', namespace='orders')),
-    path(route='payment/', view=include('payment.urls', namespace='payment')),
-    path(route='coupons/', view=include('coupons.urls', namespace='coupons')),
+    path(route=_('cart/'), view=include('cart.urls', namespace='cart')),
+    path(route=_('orders/'), view=include('orders.urls', namespace='orders')),
+    path(route=_('payment/'), view=include('payment.urls', namespace='payment')),
+    path(route=_('coupons/'), view=include('coupons.urls', namespace='coupons')),
     path(route='rosetta/', view=include('rosetta.urls')),
     path(route='', view=include('shop.urls', namespace='shop')),
+
+)
+
+urlpatterns += [
+    path(
+        route='payment/webhook/',
+        view=webhooks.stripe_webhook,
+        name='stripe-webhook'
+    ),
+
 ]
 
 if settings.DEBUG:
