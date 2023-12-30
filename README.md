@@ -40,6 +40,7 @@ All product images are from [unsplash](https://unsplash.com/)
 - [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) - for generating order invoice pdf.
 - [redis](https://github.com/redis/redis-py) - store products to recommend.
 - [django-rosetta](https://django-rosetta.readthedocs.io/) - interface for translations.
+- [django-parler](https://django-parler.readthedocs.io/en/stable/) - for translating models.
 
 ## PS
 
